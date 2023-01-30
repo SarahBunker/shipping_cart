@@ -6,6 +6,7 @@
 2. Clone this repository
 3. `cd` into the downloaded directory
 4. `cd` into server and run `npm install` from the command line to install all dependencies
+5. Navigate to client directory and run `npm run dev` 
 
 ## DataBase Setup
 
