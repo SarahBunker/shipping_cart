@@ -6,7 +6,12 @@
 2. Clone this repository
 3. `cd` into the downloaded directory
 4. `cd` into server and run `npm install` from the command line to install all dependencies
-5. Navigate to client directory and run `npm run dev` 
+
+## Setup for client-side 
+5. Navigate to client director and run `npm install`
+6. Navigate to client directory and run `npm run dev` 
+
+If you get error STD::bad_alloc, then delete the .parcel-cache file and rerun `npm run dev`
 
 ## DataBase Setup
 
