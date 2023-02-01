@@ -4,24 +4,31 @@ const Form = ({onSubmit}) => {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [quantity, setQuantity] = useState("");
+  const [isFormVisible, setIsFormVisible] = useState(false);
   
   const handleClick = (e)=> {
     e.preventDefault();
-    const form = document.querySelector('.add-form');
-    form.classList.toggle('visible');
+    setIsFormVisible(!isFormVisible);
   };
 
   const handleAddForm = (e)=> {
-    handleClick(e)
+    e.preventDefault();
     onSubmit({
       title,
       price: parseInt(price, 10),
       quantity: parseInt(quantity, 10)
-    })
+    }, resetInputs)
+  };
+
+  const resetInputs = () => {
+    setTitle("");
+    setPrice("");
+    setQuantity("");
+    setIsFormVisible(!isFormVisible);
   };
   
   return ( 
-    <div className="add-form">
+    <div className={`add-form ${isFormVisible ? "visible" : ""}`}>
       <p><a href="#" onClick={handleClick} className="button add-product-button">Add A Product</a></p>
         <h3>Add Product</h3>
         <form>
