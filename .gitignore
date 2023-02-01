@@ -4,4 +4,6 @@
 
 ./client/dist
 
+./client/.parcel-cache
+
 .env

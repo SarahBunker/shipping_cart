@@ -27635,21 +27635,27 @@ const Form = ({ onSubmit  })=>{
     const [title, setTitle] = (0, _react.useState)("");
     const [price, setPrice] = (0, _react.useState)("");
     const [quantity, setQuantity] = (0, _react.useState)("");
+    const [isFormVisible, setIsFormVisible] = (0, _react.useState)(false);
     const handleClick = (e)=>{
         e.preventDefault();
-        const form = document.querySelector(".add-form");
-        form.classList.toggle("visible");
+        setIsFormVisible(!isFormVisible);
     };
     const handleAddForm = (e)=>{
-        handleClick(e);
+        e.preventDefault();
         onSubmit({
             title,
             price: parseInt(price, 10),
             quantity: parseInt(quantity, 10)
-        });
+        }, resetInputs);
+    };
+    const resetInputs = ()=>{
+        setTitle("");
+        setPrice("");
+        setQuantity("");
+        setIsFormVisible(!isFormVisible);
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "add-form",
+        className: `add-form ${isFormVisible ? "visible" : ""}`,
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -27659,19 +27665,19 @@ const Form = ({ onSubmit  })=>{
                     children: "Add A Product"
                 }, void 0, false, {
                     fileName: "src/Components/Form.js",
-                    lineNumber: 25,
+                    lineNumber: 32,
                     columnNumber: 10
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Components/Form.js",
-                lineNumber: 25,
+                lineNumber: 32,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: "Add Product"
             }, void 0, false, {
                 fileName: "src/Components/Form.js",
-                lineNumber: 26,
+                lineNumber: 33,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
@@ -27684,7 +27690,7 @@ const Form = ({ onSubmit  })=>{
                                 children: "Product Name"
                             }, void 0, false, {
                                 fileName: "src/Components/Form.js",
-                                lineNumber: 29,
+                                lineNumber: 36,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -27694,13 +27700,13 @@ const Form = ({ onSubmit  })=>{
                                 onChange: (e)=>setTitle(e.target.value)
                             }, void 0, false, {
                                 fileName: "src/Components/Form.js",
-                                lineNumber: 30,
+                                lineNumber: 37,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/Form.js",
-                        lineNumber: 28,
+                        lineNumber: 35,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27711,7 +27717,7 @@ const Form = ({ onSubmit  })=>{
                                 children: "Price"
                             }, void 0, false, {
                                 fileName: "src/Components/Form.js",
-                                lineNumber: 34,
+                                lineNumber: 41,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -27721,13 +27727,13 @@ const Form = ({ onSubmit  })=>{
                                 onChange: (e)=>setPrice(e.target.value)
                             }, void 0, false, {
                                 fileName: "src/Components/Form.js",
-                                lineNumber: 35,
+                                lineNumber: 42,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/Form.js",
-                        lineNumber: 33,
+                        lineNumber: 40,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27738,7 +27744,7 @@ const Form = ({ onSubmit  })=>{
                                 children: "Quantity"
                             }, void 0, false, {
                                 fileName: "src/Components/Form.js",
-                                lineNumber: 39,
+                                lineNumber: 46,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -27748,13 +27754,13 @@ const Form = ({ onSubmit  })=>{
                                 onChange: (e)=>setQuantity(e.target.value)
                             }, void 0, false, {
                                 fileName: "src/Components/Form.js",
-                                lineNumber: 40,
+                                lineNumber: 47,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/Form.js",
-                        lineNumber: 38,
+                        lineNumber: 45,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27766,7 +27772,7 @@ const Form = ({ onSubmit  })=>{
                                 children: "Add"
                             }, void 0, false, {
                                 fileName: "src/Components/Form.js",
-                                lineNumber: 44,
+                                lineNumber: 51,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -27775,29 +27781,29 @@ const Form = ({ onSubmit  })=>{
                                 children: "Cancel"
                             }, void 0, false, {
                                 fileName: "src/Components/Form.js",
-                                lineNumber: 45,
+                                lineNumber: 52,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/Form.js",
-                        lineNumber: 43,
+                        lineNumber: 50,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/Form.js",
-                lineNumber: 27,
+                lineNumber: 34,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/Form.js",
-        lineNumber: 24,
+        lineNumber: 31,
         columnNumber: 5
     }, undefined);
 };
-_s(Form, "y2keZ6kAqNMwnnNd56PZGKH3Sdw=");
+_s(Form, "rHaZdTcQOPkX6zdB2ai5xFfRsI4=");
 _c = Form;
 exports.default = Form;
 var _c;
