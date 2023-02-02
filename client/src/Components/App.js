@@ -33,7 +33,7 @@ const App = () => {
   };
 
   return ( 
-    <div> 
+    <div id="app"> 
       <Title />
       <ProductList products={products}/>
       <Form onSubmit={handleSubmit} />
