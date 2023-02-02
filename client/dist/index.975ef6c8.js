@@ -27170,10 +27170,7 @@ const App = ()=>{
     }, []);
     const handleSubmit = async (newProduct, callback)=>{
         try {
-            const response = await (0, _axiosDefault.default).post("/api/products", {
-                ...newProduct
-            });
-            const data = response.data;
+            const data = await (0, _productServicesDefault.default).createProduct(...newProduct);
             setProducts(products.concat(data));
             if (callback) callback();
         } catch (e) {
@@ -27185,27 +27182,27 @@ const App = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _titleDefault.default), {}, void 0, false, {
                 fileName: "src/Components/App.js",
-                lineNumber: 35,
+                lineNumber: 34,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productListDefault.default), {
                 products: products
             }, void 0, false, {
                 fileName: "src/Components/App.js",
-                lineNumber: 36,
+                lineNumber: 35,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
                 onSubmit: handleSubmit
             }, void 0, false, {
                 fileName: "src/Components/App.js",
-                lineNumber: 37,
+                lineNumber: 36,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/App.js",
-        lineNumber: 34,
+        lineNumber: 33,
         columnNumber: 5
     }, undefined);
 };
@@ -31928,20 +31925,30 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _routes = require("../constants/routes");
+var _routesDefault = parcelHelpers.interopDefault(_routes);
 const getProducts = async ()=>{
     try {
-        const response = await (0, _axiosDefault.default).get("api/products");
+        const response = await (0, _axiosDefault.default).get((0, _routesDefault.default).GET_PRODUCTS_URL);
         return response.data;
     } catch (e) {
-        console.log("Error");
+        console.log("Error Getting Products");
     }
 };
 const createProduct = async (newProduct)=>{
     try {
-        const response = await (0, _axiosDefault.default).post("/api/products", {
+        const response = await (0, _axiosDefault.default).post((0, _routesDefault.default).CREATE_PRODUCT_URL, {
             ...newProduct
         });
         return response.data;
+    } catch (e) {
+        console.log("Error CREATE");
+    }
+};
+const deleteProduct = async (productID)=>{
+    try {
+        const response = await (0, _axiosDefault.default).post((0, _routesDefault.default).DELETE_PRODUCT_URL(productID));
+        console.log(`Product ${productID} has been deleted.`);
     } catch (e) {
         console.log("Error");
     }
@@ -32002,6 +32009,30 @@ Empty response body
 ```
 */ 
 
-},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","jC2qd","8lqZg"], "8lqZg", "parcelRequiree8ef")
+},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../constants/routes":"lBb9s"}],"lBb9s":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const GET_PRODUCTS_URL = "/api/products";
+const CREATE_PRODUCT_URL = "/api/products";
+const DELETE_PRODUCT_URL = (productId)=>{
+    return `/api/products/${productId}`;
+};
+_c = DELETE_PRODUCT_URL;
+const UPDATE_PRODUCT_URL = (productId)=>{
+    return `/api/products/${productId}`;
+};
+_c1 = UPDATE_PRODUCT_URL;
+const Routes = {
+    GET_PRODUCTS_URL,
+    CREATE_PRODUCT_URL,
+    DELETE_PRODUCT_URL,
+    UPDATE_PRODUCT_URL
+};
+exports.default = Routes;
+var _c, _c1;
+$RefreshReg$(_c, "DELETE_PRODUCT_URL");
+$RefreshReg$(_c1, "UPDATE_PRODUCT_URL");
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","jC2qd","8lqZg"], "8lqZg", "parcelRequiree8ef")
 
 //# sourceMappingURL=index.975ef6c8.js.map

@@ -19,8 +19,7 @@ const App = () => {
 
   const handleSubmit = async (newProduct, callback) => {
     try {
-      const response = await axios.post("/api/products", { ...newProduct });
-      const data = response.data;
+      const data = await ProductService.createProduct(...newProduct)
       setProducts(products.concat(data));
       if (callback) {
         callback();
