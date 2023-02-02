@@ -1,8 +1,9 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react'; 
+import { useState, useEffect } from 'react';
 import Title from "./Title";
 import ProductList from "./ProductList";
 import Form from "./Form";
+import ProductService from "../services/productServices";
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -10,10 +11,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await axios.get("api/products");
-      const data = response.data;
-      console.log("data", data)
-      console.log(typeof data)
+      const data = await ProductService.getProducts();
       setProducts(data)
     }
     fetchProducts()
@@ -32,8 +30,8 @@ const App = () => {
     }
   };
 
-  return ( 
-    <div id="app"> 
+  return (
+    <div id="app">
       <Title />
       <ProductList products={products}/>
       <Form onSubmit={handleSubmit} />

@@ -143,8 +143,8 @@
     }
   }
 })({"1xC6H":[function(require,module,exports) {
-var Refresh = require("8354fa6897ce06f4");
-var ErrorOverlay = require("1d3049dc021ca63a");
+var Refresh = require("acf306c6f2d3ce90");
+var ErrorOverlay = require("6f81271c388ce028");
 Refresh.injectIntoGlobalHook(window);
 window.$RefreshReg$ = function() {};
 window.$RefreshSig$ = function() {
@@ -163,11 +163,11 @@ window.addEventListener("parcelhmraccept", ()=>{
     ErrorOverlay.dismissRuntimeErrors();
 });
 
-},{"8354fa6897ce06f4":"786KC","1d3049dc021ca63a":"1dldy"}],"786KC":[function(require,module,exports) {
+},{"acf306c6f2d3ce90":"786KC","6f81271c388ce028":"1dldy"}],"786KC":[function(require,module,exports) {
 "use strict";
-module.exports = require("5f5e7c0b7fab31d4");
+module.exports = require("2c8378c944b8ff4c");
 
-},{"5f5e7c0b7fab31d4":"hdge7"}],"hdge7":[function(require,module,exports) {
+},{"2c8378c944b8ff4c":"hdge7"}],"hdge7":[function(require,module,exports) {
 /** @license React v0.9.0
  * react-refresh-runtime.development.js
  *
@@ -628,7 +628,7 @@ module.exports = require("5f5e7c0b7fab31d4");
 })();
 
 },{}],"1dldy":[function(require,module,exports) {
-var process = require("8d47801883006fa");
+var process = require("ac37d88a7e354172");
 !function(e, t) {
     module.exports = t();
 }(window, function() {
@@ -2358,7 +2358,7 @@ var process = require("8d47801883006fa");
     ]);
 });
 
-},{"8d47801883006fa":"d5jf4"}],"d5jf4":[function(require,module,exports) {
+},{"ac37d88a7e354172":"d5jf4"}],"d5jf4":[function(require,module,exports) {
 // shim for using process in browser
 var process = module.exports = {};
 // cached from whatever global is present so that test runners that stub it
@@ -2952,9 +2952,9 @@ const rootElement = document.getElementById("root");
 }
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./Components/App":"jgD8c","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
-module.exports = require("7200fa7a344b067");
+module.exports = require("baa34850828067f4");
 
-},{"7200fa7a344b067":"48uCM"}],"48uCM":[function(require,module,exports) {
+},{"baa34850828067f4":"48uCM"}],"48uCM":[function(require,module,exports) {
 /**
  * @license React
  * react-jsx-dev-runtime.development.js
@@ -2966,7 +2966,7 @@ module.exports = require("7200fa7a344b067");
  */ "use strict";
 (function() {
     "use strict";
-    var React = require("469fd7d63cb6440a");
+    var React = require("6ffaa87bf849777c");
     // ATTENTION
     // When adding new symbols to this file,
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
@@ -3785,11 +3785,11 @@ module.exports = require("7200fa7a344b067");
     exports.jsxDEV = jsxDEV$1;
 })();
 
-},{"469fd7d63cb6440a":"21dqq"}],"21dqq":[function(require,module,exports) {
+},{"6ffaa87bf849777c":"21dqq"}],"21dqq":[function(require,module,exports) {
 "use strict";
-module.exports = require("c9a0e11b7975484b");
+module.exports = require("3d4c8142f30324cd");
 
-},{"c9a0e11b7975484b":"6YvXz"}],"6YvXz":[function(require,module,exports) {
+},{"3d4c8142f30324cd":"6YvXz"}],"6YvXz":[function(require,module,exports) {
 /**
  * @license React
  * react.development.js
@@ -5657,7 +5657,7 @@ module.exports = require("c9a0e11b7975484b");
 
 },{}],"lOjBx":[function(require,module,exports) {
 "use strict";
-var m = require("56d9fa4b4e069935");
+var m = require("d21735b52cc93917");
 var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 exports.createRoot = function(c, o) {
     i.usingClientEntryPoint = true;
@@ -5676,7 +5676,7 @@ exports.hydrateRoot = function(c, h, o) {
     }
 };
 
-},{"56d9fa4b4e069935":"j6uA9"}],"j6uA9":[function(require,module,exports) {
+},{"d21735b52cc93917":"j6uA9"}],"j6uA9":[function(require,module,exports) {
 "use strict";
 function checkDCE() {
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== "function") return;
@@ -5690,9 +5690,9 @@ function checkDCE() {
     // a false positive.
     throw new Error("^_^");
 }
-module.exports = require("fba97648128eb8dc");
+module.exports = require("ada31341fdab517a");
 
-},{"fba97648128eb8dc":"3iA9v"}],"3iA9v":[function(require,module,exports) {
+},{"ada31341fdab517a":"3iA9v"}],"3iA9v":[function(require,module,exports) {
 /**
  * @license React
  * react-dom.development.js
@@ -5705,8 +5705,8 @@ module.exports = require("fba97648128eb8dc");
 (function() {
     "use strict";
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-    var React = require("9a85bde9b0e3c8fb");
-    var Scheduler = require("22b5fe3e5ae76132");
+    var React = require("19f764ea561a2d0e");
+    var Scheduler = require("5899e4726ebb04cb");
     var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
     var suppressWarning = false;
     function setSuppressWarning(newSuppressWarning) {
@@ -26677,11 +26677,11 @@ module.exports = require("fba97648128eb8dc");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{"9a85bde9b0e3c8fb":"21dqq","22b5fe3e5ae76132":"juvHo"}],"juvHo":[function(require,module,exports) {
+},{"19f764ea561a2d0e":"21dqq","5899e4726ebb04cb":"juvHo"}],"juvHo":[function(require,module,exports) {
 "use strict";
-module.exports = require("57a2ae92b6806e96");
+module.exports = require("badede1192cdd47b");
 
-},{"57a2ae92b6806e96":"RqdIf"}],"RqdIf":[function(require,module,exports) {
+},{"badede1192cdd47b":"RqdIf"}],"RqdIf":[function(require,module,exports) {
 /**
  * @license React
  * scheduler.development.js
@@ -27154,6 +27154,8 @@ var _productList = require("./ProductList");
 var _productListDefault = parcelHelpers.interopDefault(_productList);
 var _form = require("./Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
+var _productServices = require("../services/productServices");
+var _productServicesDefault = parcelHelpers.interopDefault(_productServices);
 var _s = $RefreshSig$();
 const App = ()=>{
     _s();
@@ -27161,10 +27163,7 @@ const App = ()=>{
     // const [total, setTotal] = useState(0);
     (0, _react.useEffect)(()=>{
         const fetchProducts = async ()=>{
-            const response = await (0, _axiosDefault.default).get("api/products");
-            const data = response.data;
-            console.log("data", data);
-            console.log(typeof data);
+            const data = await (0, _productServicesDefault.default).getProducts();
             setProducts(data);
         };
         fetchProducts();
@@ -27186,27 +27185,27 @@ const App = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _titleDefault.default), {}, void 0, false, {
                 fileName: "src/Components/App.js",
-                lineNumber: 37,
+                lineNumber: 35,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productListDefault.default), {
                 products: products
             }, void 0, false, {
                 fileName: "src/Components/App.js",
-                lineNumber: 38,
+                lineNumber: 36,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
                 onSubmit: handleSubmit
             }, void 0, false, {
                 fileName: "src/Components/App.js",
-                lineNumber: 39,
+                lineNumber: 37,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/App.js",
-        lineNumber: 36,
+        lineNumber: 34,
         columnNumber: 5
     }, undefined);
 };
@@ -27221,7 +27220,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","axios":"jo6P5","react":"21dqq","./Title":"3cUdb","./ProductList":"jFp81","./Form":"iAZTT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jo6P5":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","axios":"jo6P5","react":"21dqq","./Title":"3cUdb","./ProductList":"jFp81","./Form":"iAZTT","../services/productServices":"Ut9TS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jo6P5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _axiosJsDefault.default));
@@ -28191,7 +28190,7 @@ var _axiosErrorJsDefault = parcelHelpers.interopDefault(_axiosErrorJs);
 // temporary hotfix to avoid circular references until AxiosURLSearchParams is refactored
 var _formDataJs = require("../platform/node/classes/FormData.js");
 var _formDataJsDefault = parcelHelpers.interopDefault(_formDataJs);
-var Buffer = require("d4cb16f140250e58").Buffer;
+var Buffer = require("ef5bfa2d5016dff4").Buffer;
 "use strict";
 /**
  * Determines if the given thing is a array or js object.
@@ -28346,15 +28345,15 @@ const predicates = (0, _utilsJsDefault.default).toFlatObject((0, _utilsJsDefault
 }
 exports.default = toFormData;
 
-},{"d4cb16f140250e58":"fCgem","../utils.js":"5By4s","../core/AxiosError.js":"3u8Tl","../platform/node/classes/FormData.js":"aFlee","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fCgem":[function(require,module,exports) {
+},{"ef5bfa2d5016dff4":"fCgem","../utils.js":"5By4s","../core/AxiosError.js":"3u8Tl","../platform/node/classes/FormData.js":"aFlee","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fCgem":[function(require,module,exports) {
 /*!
  * The buffer module from node.js, for the browser.
  *
  * @author   Feross Aboukhadijeh <https://feross.org>
  * @license  MIT
  */ /* eslint-disable no-proto */ "use strict";
-var base64 = require("8989f6e21750d559");
-var ieee754 = require("6f676b0584bf57d2");
+var base64 = require("fb67a50e57839948");
+var ieee754 = require("48beeef3d0f9b7aa");
 var customInspectSymbol = typeof Symbol === "function" && typeof Symbol["for"] === "function" // eslint-disable-line dot-notation
  ? Symbol["for"]("nodejs.util.inspect.custom") // eslint-disable-line dot-notation
  : null;
@@ -29576,7 +29575,7 @@ var hexSliceLookupTable = function() {
     return table;
 }();
 
-},{"8989f6e21750d559":"eIiSV","6f676b0584bf57d2":"cO95r"}],"eIiSV":[function(require,module,exports) {
+},{"fb67a50e57839948":"eIiSV","48beeef3d0f9b7aa":"cO95r"}],"eIiSV":[function(require,module,exports) {
 "use strict";
 exports.byteLength = byteLength;
 exports.toByteArray = toByteArray;
@@ -31437,7 +31436,7 @@ $RefreshReg$(_c, "Title");
 }
 },{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"km3Ru":[function(require,module,exports) {
 "use strict";
-var Refresh = require("77db9d06d5d3d5ee");
+var Refresh = require("b7f3193886cefae3");
 function debounce(func, delay) {
     {
         let timeout = undefined;
@@ -31568,7 +31567,7 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"77db9d06d5d3d5ee":"786KC"}],"jFp81":[function(require,module,exports) {
+},{"b7f3193886cefae3":"786KC"}],"jFp81":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f780 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -31924,6 +31923,85 @@ $RefreshReg$(_c, "Form");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","jC2qd","8lqZg"], "8lqZg", "parcelRequiree8ef")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"Ut9TS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+const getProducts = async ()=>{
+    try {
+        const response = await (0, _axiosDefault.default).get("api/products");
+        return response.data;
+    } catch (e) {
+        console.log("Error");
+    }
+};
+const createProduct = async (newProduct)=>{
+    try {
+        const response = await (0, _axiosDefault.default).post("/api/products", {
+            ...newProduct
+        });
+        return response.data;
+    } catch (e) {
+        console.log("Error");
+    }
+};
+const ProductService = {
+    getProducts,
+    createProduct
+};
+exports.default = ProductService; /*
+## 1.3. PUT /api/products/:id
+
+Updates the product with the given `id`.
+
+### 1.3.1. Expected Payload
+
+```json
+{
+  "title": "Keyboard",
+  "price": 50,
+  "quantity": 5
+}
+```
+
+### 1.3.2. Successful Response
+
+The updated product is returned.
+
+#### 1.3.2.1. Example Response
+
+```json
+{
+  "_id": "61d754d72092473d55a809e1",
+  "title": "Keyboard",
+  "price": 50,
+  "quantity": 5,
+  "createdAt": "2020-10-04T05:57:02.777Z",
+  "updatedAt": "2020-10-04T05:57:02.777Z",
+  "_v": 0
+}
+```
+
+## 1.4. DELETE /api/products/:id
+
+Deletes a product
+
+### 1.4.1. Expected Payload
+
+None
+
+### 1.4.2. Successful Response
+
+Empty response body
+
+#### 1.4.2.1. Example Response
+
+```json
+
+```
+*/ 
+
+},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","jC2qd","8lqZg"], "8lqZg", "parcelRequiree8ef")
 
 //# sourceMappingURL=index.975ef6c8.js.map
