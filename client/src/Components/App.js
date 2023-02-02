@@ -4,10 +4,16 @@ import Title from "./Title";
 import ProductList from "./ProductList";
 import Form from "./Form";
 import ProductService from "../services/productServices";
+import CartServices from "../services/CartServices";
 
 const App = () => {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState({quantity: 0, items: [], total: 0})
+  // items objects {title, quantityInCart, pricePerItem}
   // const [total, setTotal] = useState(0);
+  const [itemsInCart, setItemsInCart] = useState([])
+
+  console.log("app rendering: ", {products});
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -15,6 +21,23 @@ const App = () => {
       setProducts(data)
     }
     fetchProducts()
+  }, [])
+
+  useEffect(() => {
+    const fetchItemsInCart = async () => {
+      const items = await CartServices.getCartItems();
+      console.log("items in cart load", {items});
+      const quantity = 0
+      const total = 0
+      let newCart = {
+        quantity,
+        items,
+        total,
+      }
+      setCart(newCart)
+    }
+
+    fetchItemsInCart()
   }, [])
 
   const handleSubmit = async (newProduct, callback) => {
@@ -29,10 +52,35 @@ const App = () => {
     }
   };
 
+  const handleDelete = async (productID) => {
+    try {
+      const data = await ProductService.deleteProduct(productID)
+      setProducts(products.filter(product => product._id !== productID))
+    } catch (e) {
+      console.error("Error deleting.")
+    }
+  }
+
+  const handleUpdate = async (productID, newProduct) => {
+    try {
+      const data = await ProductService.updateProduct(productID, newProduct)
+      console.log(productID, newProduct)
+      setProducts(products.map(product => {
+        if (product._id === productID) {
+          console.log("updating with: ", {data})
+          return data
+        }
+        return product
+      }))
+    } catch (e) {
+      console.error("Error updating.")
+    }
+  }
+
   return (
     <div id="app">
-      <Title />
-      <ProductList products={products}/>
+      <Title cart={cart}/>
+      <ProductList products={products} onDelete={handleDelete} onUpdate={handleUpdate}/>
       <Form onSubmit={handleSubmit} />
     </div>
   );
