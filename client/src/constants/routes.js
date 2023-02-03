@@ -14,6 +14,8 @@ const GET_CART_ITEMS_URL = "/api/cart"
 
 const ADD_CART_ITEMS_URL = "/api/add-to-cart"
 
+const EMPTY_CART_URL = "/api/checkout"
+
 
 
 const Routes = { 
@@ -22,6 +24,7 @@ const Routes = {
   DELETE_PRODUCT_URL, 
   UPDATE_PRODUCT_URL, 
   GET_CART_ITEMS_URL, 
-  ADD_CART_ITEMS_URL 
+  ADD_CART_ITEMS_URL,
+  EMPTY_CART_URL,
 };
 export default Routes;

@@ -26,8 +26,12 @@ const App = () => {
     const fetchItemsInCart = async () => {
       const items = await CartServices.getCartItems();
       console.log("items in cart load", {items});
-      const quantity = 0 //FixMe
-      const total = 0 //FixMe
+      let quantity = 0
+      let total = 0
+      items.forEach(item => {
+        quantity += item.quantity
+        total += item.price * item.quantity
+      })
       let newCart = {
         quantity: quantity,
         items: items,
@@ -41,16 +45,29 @@ const App = () => {
   }, [])
 
   const handleSubmit = async (newProduct, callback) => {
-    try {
-      const data = await ProductService.createProduct(...newProduct)
-      setProducts(products.concat(data));
-      if (callback) {
-        callback();
-      }
-    } catch (e) {
-      console.error("Error");
+    console.log("In handleSubmit", newProduct)
+    const data = await ProductService.createProduct(newProduct)
+    setProducts(products.concat(data));
+    if (callback) {
+      callback();
     }
+    // try {
+    //   console.log("About to Try")
+    //   const data = await ProductService.createProduct(...newProduct)
+    //   console.log(data)
+    //   setProducts(products.concat(data));
+    //   if (callback) {
+    //     callback();
+    //   }
+    // } catch (e) {
+    //   console.error("Error");
+    // }
   };
+
+  const handleCheckout = async () => {
+    const data = await CartServices.emptyCart()
+    setCart({ quantity: 0, items: [], total: 0 });
+  }
 
   const handleDelete = async (productID) => {
     try {
@@ -58,6 +75,46 @@ const App = () => {
       setProducts(products.filter(product => product._id !== productID))
     } catch (e) {
       console.error("Error deleting.")
+    }
+  }
+
+  const handleAddToCart = async (productID) => {
+    try {
+      const data = await CartServices.addCartItems(productID);
+      console.log("Updated cart data: ", data, productID, cart);
+      setProducts(products.map(product => {
+        if (product._id === productID.productId) {
+          return {...product, quantity: product.quantity - 1}
+        } else {
+          return product
+        }
+      }))
+      let newCartItems;
+      // console.log("logging:", cart.items, productID.productId, cart.items.filter(item => item.productID === productID.productID)[0])
+      if (cart.items && cart.items.length > 0) {
+        console.log("Item", data.item.productId)
+        let existingCartItem = cart.items.filter(item => item.productId === data.item.productId)[0];
+        console.log("Existing", existingCartItem)
+        if (existingCartItem) {
+          newCartItems = cart.items.map(item => {
+          if (item.productId === existingCartItem.productId) {
+            item.quantity += 1
+          }
+            return item
+          })
+        } else {
+        newCartItems = cart.items.concat(data.item)
+        }
+      } else {
+        newCartItems = cart.items.concat(data.item)
+      }
+      
+      console.log("new", newCartItems)
+
+      //console.log("quantity: ", cart.quantity)
+      setCart({ quantity: cart.quantity + 1, items: newCartItems, total: cart.total + data.item.price })
+    } catch (e) {
+      console.error("Error adding to cart.")
     }
   }
 
@@ -79,9 +136,9 @@ const App = () => {
 
   return (
     <div id="app">
-      <Title cart={cart} />
+      <Title {...cart} onClick={handleCheckout} />
       <main>
-        <ProductList products={products} onDelete={handleDelete} onUpdate={handleUpdate}/>
+        <ProductList products={products} onDelete={handleDelete} onUpdate={handleUpdate} onAddToCart={handleAddToCart} />
         <Form onSubmit={handleSubmit} />
       </main>
     </div>

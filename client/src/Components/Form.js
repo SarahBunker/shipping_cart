@@ -13,11 +13,17 @@ const Form = ({onSubmit}) => {
 
   const handleAddForm = (e)=> {
     e.preventDefault();
+    if (title === "") return;
+    if (quantity === "") {
+      setQuantity(0)
+    }
+    if (price === "") return;
     onSubmit({
       title,
       price: parseInt(price, 10),
       quantity: parseInt(quantity, 10)
     }, resetInputs)
+    
   };
 
   const resetInputs = () => {

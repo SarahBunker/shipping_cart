@@ -11,6 +11,7 @@ const getProducts = async () => {
 }
 
 const createProduct = async (newProduct) => {
+  console.log("in CreateProduct:", newProduct)
   try {
     const response = await axios.post(Routes.CREATE_PRODUCT_URL, { ...newProduct });
     return response.data;

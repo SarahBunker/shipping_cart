@@ -21,6 +21,15 @@ const addCartItems = async (productID) => {
   }
 }
 
+const emptyCart = async () => {
+  try {
+    const response = await axios.post(Routes.EMPTY_CART_URL);
+    return response.data;
+  } catch (e) {
+    console.log("Error EMPTYING CART");
+  }
+}
+
 // ADD_CART_ITEMS_URL
 
 // const createProduct = async (newProduct) => {
@@ -51,6 +60,6 @@ const addCartItems = async (productID) => {
 //   }
 // }
 
-const CartServices = { getCartItems, addCartItems }
+const CartServices = { getCartItems, addCartItems, emptyCart }
 
 export default CartServices;
