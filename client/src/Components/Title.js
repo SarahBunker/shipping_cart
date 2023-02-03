@@ -16,7 +16,7 @@ const Title = ({ cart, onClick }) => {
 
         {/* cart should be table */}
 
-        {cart.length == 0 ? (
+        {cart.length === 0 ? (
           ""
         ) : (
           <table>
