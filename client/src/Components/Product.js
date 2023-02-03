@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 
+import CartServices from "../services/CartServices";
+
 const Product = ({title, _id, quantity, price, onDelete, onUpdate}) => {
   const [newTitle, setNewTitle] = useState("");
   const [newPrice, setNewPrice] = useState("");
@@ -30,15 +32,18 @@ const Product = ({title, _id, quantity, price, onDelete, onUpdate}) => {
   const handleAddToCart = (e) => {
     e.preventDefault();
     if (quantity <= 0) return
-    let newState = {
-      title,
-      quantity: Number(quantity)- 1,
-      price: Number(price),
-    }
-    console.log("title", newState.title)
-    console.log("quantity", newState.quantity)
-    console.log("price", newState.price)
-    onUpdate(_id, newState)
+    //CartServices.addCartItems(_id);
+    CartServices.addCartItems({productId: _id});
+
+    // let newState = {
+    //   title,
+    //   quantity: Number(quantity)- 1,
+    //   price: Number(price),
+    // }
+    // console.log("title", newState.title)
+    // console.log("quantity", newState.quantity)
+    // console.log("price", newState.price)
+    // onUpdate(_id, newState)
   }
 
   return (
@@ -52,24 +57,24 @@ const Product = ({title, _id, quantity, price, onDelete, onUpdate}) => {
           <a className="button edit" onClick={toggleEdit}>Edit</a>
         </div>
         <a className="delete-button" onClick={handleDelete}><span>X</span></a>
-        <div class={`edit-form ${isFormVisible ? "visible" : ""}`}>
+        <div className={`edit-form ${editIsVisible ? "visible" : ""}`}>
           <h3>Edit Product</h3>
           <form>
-            <div class="input-group">
+            <div className="input-group">
               <label for="product-name">Product Name</label>
               <input onChange={(e) => setNewTitle(e.target.value)} type="text" id="product-name" value={newTitle} />
             </div>
-            <div class="input-group">
+            <div className="input-group">
               <label for="product-price">Price</label>
               <input onChange={(e) => setNewPrice(e.target.value)} type="text" id="product-price" value={newPrice} />
             </div>
-            <div class="input-group">
+            <div className="input-group">
               <label for="product-quantity">Quantity</label>
               <input onChange={(e) => setNewQuantity(e.target.value)} type="text" id="product-quantity" value={newQuantity} />
             </div>
-            <div class="actions form-actions">
-              <a class="button" onClick={handleEdit}>Update</a>
-              <a class="button" onClick={toggleEdit}>Cancel</a>
+            <div className="actions form-actions">
+              <a className="button" onClick={handleEdit}>Update</a>
+              <a className="button" onClick={toggleEdit}>Cancel</a>
             </div>
           </form>
         </div>

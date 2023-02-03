@@ -12,7 +12,16 @@ const UPDATE_PRODUCT_URL = (productId) => {
 
 const GET_CART_ITEMS_URL = "/api/cart"
 
+const ADD_CART_ITEMS_URL = "/api/add-to-cart"
 
 
-const Routes = { GET_PRODUCTS_URL, CREATE_PRODUCT_URL, DELETE_PRODUCT_URL, UPDATE_PRODUCT_URL };
+
+const Routes = { 
+  GET_PRODUCTS_URL, 
+  CREATE_PRODUCT_URL, 
+  DELETE_PRODUCT_URL, 
+  UPDATE_PRODUCT_URL, 
+  GET_CART_ITEMS_URL, 
+  ADD_CART_ITEMS_URL 
+};
 export default Routes;

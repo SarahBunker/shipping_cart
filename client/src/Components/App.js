@@ -10,8 +10,6 @@ const App = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({quantity: 0, items: [], total: 0})
   // items objects {title, quantityInCart, pricePerItem}
-  // const [total, setTotal] = useState(0);
-  const [itemsInCart, setItemsInCart] = useState([])
 
   console.log("app rendering: ", {products});
 
@@ -21,22 +19,24 @@ const App = () => {
       setProducts(data)
     }
     fetchProducts()
+    console.log("Got products")
   }, [])
 
   useEffect(() => {
     const fetchItemsInCart = async () => {
       const items = await CartServices.getCartItems();
       console.log("items in cart load", {items});
-      const quantity = 0
-      const total = 0
+      const quantity = 0 //FixMe
+      const total = 0 //FixMe
       let newCart = {
-        quantity,
-        items,
-        total,
+        quantity: quantity,
+        items: items,
+        total: total,
       }
+      console.log("items before setCart:", { items });
+      console.log("newCart items before setCart:", newCart.quantity);
       setCart(newCart)
     }
-
     fetchItemsInCart()
   }, [])
 
@@ -79,9 +79,11 @@ const App = () => {
 
   return (
     <div id="app">
-      <Title cart={cart}/>
-      <ProductList products={products} onDelete={handleDelete} onUpdate={handleUpdate}/>
-      <Form onSubmit={handleSubmit} />
+      <Title cart={cart} />
+      <main>
+        <ProductList products={products} onDelete={handleDelete} onUpdate={handleUpdate}/>
+        <Form onSubmit={handleSubmit} />
+      </main>
     </div>
   );
 }

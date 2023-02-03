@@ -12,6 +12,17 @@ const getCartItems = async () => {
   }
 }
 
+const addCartItems = async (productID) => {
+  try {
+    const response = await axios.post(Routes.ADD_CART_ITEMS_URL, productID);
+    return response.data;
+  } catch (e) {
+    console.log("Error ADDING TO CART");
+  }
+}
+
+// ADD_CART_ITEMS_URL
+
 // const createProduct = async (newProduct) => {
 //   try {
 //     const response = await axios.post(Routes.CREATE_PRODUCT_URL, { ...newProduct });
@@ -40,6 +51,6 @@ const getCartItems = async () => {
 //   }
 // }
 
-const CartServices = { getCartItems}
+const CartServices = { getCartItems, addCartItems }
 
 export default CartServices;
