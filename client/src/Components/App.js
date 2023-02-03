@@ -81,7 +81,6 @@ const App = () => {
   const handleAddToCart = async (productID) => {
     try {
       const data = await CartServices.addCartItems(productID);
-      console.log("Updated cart data: ", data, productID, cart);
       setProducts(products.map(product => {
         if (product._id === productID.productId) {
           return {...product, quantity: product.quantity - 1}
@@ -90,11 +89,10 @@ const App = () => {
         }
       }))
       let newCartItems;
-      // console.log("logging:", cart.items, productID.productId, cart.items.filter(item => item.productID === productID.productID)[0])
       if (cart.items && cart.items.length > 0) {
-        console.log("Item", data.item.productId)
+        
         let existingCartItem = cart.items.filter(item => item.productId === data.item.productId)[0];
-        console.log("Existing", existingCartItem)
+        
         if (existingCartItem) {
           newCartItems = cart.items.map(item => {
           if (item.productId === existingCartItem.productId) {
@@ -108,10 +106,7 @@ const App = () => {
       } else {
         newCartItems = cart.items.concat(data.item)
       }
-      
-      console.log("new", newCartItems)
 
-      //console.log("quantity: ", cart.quantity)
       setCart({ quantity: cart.quantity + 1, items: newCartItems, total: cart.total + data.item.price })
     } catch (e) {
       console.error("Error adding to cart.")
