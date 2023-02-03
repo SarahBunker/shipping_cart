@@ -27312,7 +27312,7 @@ const Title = ({ cart , onClick  })=>{
                         lineNumber: 15,
                         columnNumber: 9
                     }, undefined),
-                    cart.length == 0 ? "" : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("table", {
+                    cart.length === 0 ? "" : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("table", {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tbody", {
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tr", {
