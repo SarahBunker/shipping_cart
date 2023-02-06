@@ -160,12 +160,14 @@ input[type="text"]:focus {
   display: none;
 }
 
-.add-form.visible .add-product-button {
+.add-form.visible .add-product-button,
+.edit-form {
   display: none;
 }
 
 .add-form.visible h3,
-.add-form.visible form {
+.add-form.visible form,
+.edit-form.visible {
   display: block;
 }
 
