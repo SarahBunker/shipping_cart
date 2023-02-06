@@ -110,7 +110,7 @@ test("onSubmit is called with the new product", async () => {
   const newProduct = {
     title: inputProductName.value,
     price: parseInt(inputPrice.value, 10),
-    quantity: parseInt(inputProductQuantity.value, 12),
+    quantity: parseInt(inputProductQuantity.value, 10),
   };
 
   const button = screen.getByTestId("add");
